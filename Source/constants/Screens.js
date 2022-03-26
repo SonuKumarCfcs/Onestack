@@ -1,0 +1,27 @@
+const Screens = {
+    PhoneNumberScreen : 'PhoneNumberScreen',
+    Home : 'Home',
+    PhoneVerificationScreen : 'PhoneVerificationScreen',
+    EmailIdScreen : 'EmailIdScreen',
+    PanDetailScreen : 'PanDetailScreen',
+    AadharDetailScreen : 'AadharDetailScreen',
+    AadharVerificationScreen : 'AadharVerificationScreen',
+    VerifyIdentityScreen : 'VerifyIdentityScreen',
+    DigitalKYCScreen : 'DigitalKYCScreen',
+    TakePANCardScreen : 'TakePANCardScreen',
+    TakeAadharCardScreen : 'TakeAadharCardScreen',
+    PhotographScreen : 'PhotographScreen',
+    SignatureScreen : 'SignatureScreen',
+    PersonalDetailScreen : 'PersonalDetailScreen',
+    NomineeDetailScreen : 'NomineeDetailScreen',
+    LastScreen : 'LastScreen',
+    DashboardScreen : 'DashboardScreen',
+    ProfileScreen : 'ProfileScreen',
+    MyTransactionScreen : 'MyTransactionScreen',
+    ContactUsModal : 'ContactUsModal',
+    YourAccountScreen : 'YourAccountScreen',
+    BookmarkScreen : 'BookmarkScreen',
+    SplashScreen : 'SplashScreen',
+}
+
+export default Screens;
