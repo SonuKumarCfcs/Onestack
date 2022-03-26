@@ -45,7 +45,7 @@ export default class TakePANCardScreen extends React.Component {
                 <View style={styles.buttonArr}>
                     <ReusableButton
                             
-                            buttonName={"Take Photo"}
+                            buttonName={"Take All Photo"}
                             onClick={()=>{this.takePANImage()}}
                     />
                 </View>

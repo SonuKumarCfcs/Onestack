@@ -13,6 +13,7 @@ export default class SignatureScreen extends React.Component {
 
     state ={
         image : null,
+        vedio:null,
     }
     takeSignatureImage=()=>{
         ImagePicker.openPicker({
