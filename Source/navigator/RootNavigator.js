@@ -37,7 +37,7 @@ const RootStack = createNativeStackNavigator();
 
 const RootNavigator=()=>{
     return(
-      <RootStack.Navigator  initialRouteName={constants.Screens.DigitalKYCScreen}>
+      <RootStack.Navigator  initialRouteName={constants.Screens.DashboardScreen}>
         <RootStack.Screen name={constants.Screens.SplashScreen} component={SplashScreen} options={{headerShown:false}} />
         <RootStack.Screen name={constants.Screens.Home} component={HomeScreen} options={{headerShown:false}} />
         <RootStack.Screen name={constants.Screens.PhoneNumberScreen} component={PhoneNumberScreen} options={{headerShown:false}} />
