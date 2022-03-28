@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, View, Text, TextInput,StyleSheet,TouchableOpacity,Image,SafeAreaView,ScrollView, FlatList} from'react-native';
+import constants from '../constants';
 
 
 
@@ -27,27 +28,28 @@ export default class ReusableBookmarkCard extends React.Component{
 
 const styles=StyleSheet.create({
     cardContainer:{
-        width:328,
-        height:150,
-        borderRadius:16,
+        width:constants.vw(328),
+        height: constants.vh(150),
+        borderRadius: constants.vw(16),
         borderWidth:0.4,
         borderColor:'grey',
-        padding:20,
+        padding:constants.vw(20),
         //alignItems:'center',
         // justifyContent:'center',
         
 
     },
     textboxStyle:{
-        width:244,
-        height:44,marginLeft:15,
+        width: constants.vw(244),
+        height:constants.vh(44),
+        marginLeft: constants.vw(15),
         justifyContent:'center',
     },
     thinline:{
         width:'99%',
         height:0.4,
         backgroundColor:'grey',
-        marginTop:15
+        marginTop:constants.vh(15)
     },
     imageArrange:{
         flexDirection:'row',
@@ -56,19 +58,19 @@ const styles=StyleSheet.create({
         //backgroundColor:'red'
     },
     textstyle:{
-        fontSize:14,
+        fontSize:constants.vw(14),
         fontWeight:'400',
         fontStyle:'normal',
         color:'#000000'
     },
     textLstyle:{
-        fontSize:12,
+        fontSize:constants.vw(12),
         fontWeight:'400',
         fontStyle:'normal',
         color:'#00000099'
     },
     textArrange:{
-        marginTop:15,
+        marginTop:constants.vh(15),
         flexDirection:'row',
         justifyContent:'space-between',
     }
