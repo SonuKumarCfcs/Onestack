@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button, View, Text, TextInput,StyleSheet,TouchableOpacity,Image,SafeAreaView} from'react-native';
+import { Button, View, Text, TextInput,StyleSheet,TouchableOpacity,Image,SafeAreaView, ScrollView} from'react-native';
 import ReusableTextInput from '../Components/ReusableTextInput';
 import ReusableHeader from '../Components/ReusableHeader'
 import ReusableButton from '../Components/ReusableButton';
 import { connect ,useDispatch} from 'react-redux';
-import {setPhoneNumber} from '../Module/Onboarding/action';
+import {setPhoneNumber , fetchData} from '../Module/Onboarding/action';
 import constants from '../constants';
 import utils from '../utils';
 
@@ -16,6 +16,10 @@ import utils from '../utils';
 class PhoneNumberScreen extends React.Component {
     state={
        mobNumberError: '',
+    }
+    componentDidMount(){
+        this.props.fetchData()
+        console.log('fetchData',this.props.fetchData())
     }
     
     phoneValidate=()=>{
@@ -173,14 +177,17 @@ const styles=StyleSheet.create({
 });
 
 const mapStateToProps=(state)=>{
-    //console.log("state=>>",state)
+    // console.log("state=>>",state)
+    console.log("articleData=>>",state.Onboarding.articleData)
     return({
     phoneNumber:state.Onboarding.phoneNumber,
+    articleData : state.Onboarding.articleData,
     
 })}
 
 const mapDispatchToProps = {
-    setPhoneNumber:(val)=>setPhoneNumber(val)
+    setPhoneNumber:(val)=>setPhoneNumber(val),
+    fetchData : ()=>fetchData()
     
 }
 

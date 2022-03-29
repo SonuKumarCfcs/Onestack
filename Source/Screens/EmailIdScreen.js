@@ -13,6 +13,7 @@ class EmailIdScreen extends React.Component{
     state={
         emailIdError:'',
     }
+    
 
     emailValidate=()=>{
         let emailRegex =/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -55,10 +56,8 @@ class EmailIdScreen extends React.Component{
                         Data={this.props.emailId}
                         caps={'none'}
                         onValueInput={(val)=>{
-                           
                             this.props.setEmailId(val.trim())
                         }}
-                    
                     />
                     <Text style={{color:'red'}}>{this.state.emailIdError}</Text>
                 </View>

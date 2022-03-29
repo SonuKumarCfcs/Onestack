@@ -37,7 +37,7 @@ const RootStack = createNativeStackNavigator();
 
 const RootNavigator=()=>{
     return(
-      <RootStack.Navigator  initialRouteName={constants.Screens.DashboardScreen}>
+      <RootStack.Navigator  >
         <RootStack.Screen name={constants.Screens.SplashScreen} component={SplashScreen} options={{headerShown:false}} />
         <RootStack.Screen name={constants.Screens.Home} component={HomeScreen} options={{headerShown:false}} />
         <RootStack.Screen name={constants.Screens.PhoneNumberScreen} component={PhoneNumberScreen} options={{headerShown:false}} />
@@ -65,7 +65,7 @@ const RootNavigator=()=>{
       </RootStack.Navigator>
     )
 }
-
+// initialRouteName={constants.Screens.ProfileScreen}
 export default class RootNavigators extends React.Component{
   modalLayout={
     title:'hello',
@@ -77,7 +77,7 @@ export default class RootNavigators extends React.Component{
   }
     render(){
         return(
-            <NavigationContainer>
+        <NavigationContainer>
           <Stack.Navigator>
             <Stack.Group>
               <Stack.Screen name="RootNavigator" component={RootNavigator} options={{headerShown: false}} />

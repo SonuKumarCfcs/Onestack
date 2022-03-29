@@ -15,7 +15,9 @@ export default class ReusableProfileHeader extends React.Component{
                         <Text style={styles.nameStyle}>{this.props.name}</Text>
                     </View>
                 </View>
-                <Image source={this.props.image} style={styles.filterStyle}/>
+                <TouchableOpacity onPress={()=>{this.props.onPress()}} style={styles.filterStyle}>
+                    <Image source={this.props.image} />
+                </TouchableOpacity>
             </View>
         )
     }

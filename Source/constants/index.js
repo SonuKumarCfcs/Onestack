@@ -10,6 +10,7 @@ import Image from "./Image";
 import Screens from './Screens';
 import Fonts from './Fonts';
 import String from './string'
+import Common from "./Common";
 
 export default {
   Colors,
@@ -22,5 +23,6 @@ export default {
   Screens,
   Fonts,
   String,
+  Common,
   
 };

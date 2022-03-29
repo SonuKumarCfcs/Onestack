@@ -3,7 +3,7 @@ import { Button, View, Text, TextInput,StyleSheet,TouchableOpacity,Image,SafeAre
 import constants from '../constants';
 import ReusableProfileHeader from '../Components/ReusableProfileHeader';
 import ReusableOptions from '../Components/ReusableOptions';
-
+import Share from 'react-native-share';
 
 
 export default class ProfileScreen extends React.Component{
@@ -57,12 +57,28 @@ export default class ProfileScreen extends React.Component{
             onClick:()=>{this.props.navigation.navigate('ContactUsModal')}
         },
     ]
+
+    shareData=()=>{
+        let options={
+            message:'https://reactnative.dev/docs/touchableopacity'
+        }
+        Share.open(options)
+        .then((res) => {
+        console.log("Response==>",res);
+        })
+        .catch((err) => {
+        err && console.log("Error==>",err);
+        });
+    }
+
     render(){
         return(
             <SafeAreaView style={styles.container}>
                 <ReusableProfileHeader
                     name={'Profile'}
                     navigation={this.props.navigation}
+                    image={require('../../Assets/detail_share.png')}
+                    onPress={this.shareData}
                 />
                 <View style={styles.lineStyle}></View>
                 <View style={styles.QRcodeArrange}>

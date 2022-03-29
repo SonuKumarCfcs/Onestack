@@ -1,13 +1,16 @@
 import React from 'react';
-import { Button, View, Text, TextInput,StyleSheet,TouchableOpacity,Image,SafeAreaView,ScrollView} from'react-native';
+import { Button, View, Text, TextInput,StyleSheet,TouchableOpacity,Image,SafeAreaView,ScrollView,ActivityIndicator} from'react-native';
 import constants from '../constants';
 
 import Header from '../Components/Header';
 
 export default class LastScreen extends React.Component{
+    state={
+        visible  : true
+    }
     componentDidMount(){
         setTimeout(
-            ()=>{this.props.navigation.navigate('DashboardScreen')},
+            ()=>{this.props.navigation.navigate('DashboardScreen'),this.setState({visible: false})},
             3000
         )
     }
@@ -31,6 +34,9 @@ export default class LastScreen extends React.Component{
                     <Text style={styles.textStyle3}>Putting it all together</Text>
                     <Text style={styles.textStyle4}>This can take a few minutes. Stay with us!</Text>
                 </View>
+                {
+                    this.state.visible ?<ActivityIndicator color='red' size='large'/> : null
+                }
                 
             </SafeAreaView>
         )
