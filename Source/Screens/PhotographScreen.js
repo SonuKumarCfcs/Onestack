@@ -10,6 +10,7 @@ export default class PhotographScreen extends React.Component {
 
 state={
     image:null,
+    video:null,
 }
 
     takeImage=()=>{
