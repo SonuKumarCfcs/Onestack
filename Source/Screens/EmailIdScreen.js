@@ -7,6 +7,8 @@ import ReusableTextInput from '../Components/ReusableTextInput';
 import { connect } from 'react-redux';
 import {setEmailId} from '../Module/Onboarding/action';
 import constants from '../constants';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+
 
 
 class EmailIdScreen extends React.Component{
@@ -44,7 +46,7 @@ class EmailIdScreen extends React.Component{
                 <View style={{marginTop:20}}>
                     <ReusableHeader/>
                 </View>
-                <ScrollView>
+                <KeyboardAwareScrollView enableOnAndroid={true} extraScrollHeight={500} showsVerticalScrollIndicator={false} viewIsInsideTabBar={true}>
                 <View style={styles.textArrange}>
                     <Text style={styles.textsyle}>What's your Email ID?</Text>
                     <Text style={styles.textsyle1}>We'll only share important financial information here</Text>
@@ -61,7 +63,7 @@ class EmailIdScreen extends React.Component{
                     />
                     <Text style={{color:'red'}}>{this.state.emailIdError}</Text>
                 </View>
-                </ScrollView>
+                </KeyboardAwareScrollView>
                 {/* <View style={{marginTop:430}}> */}
                     <ReusableHeader/>
                 {/* </View> */}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState}from 'react';
 import { Button, View, Text, TextInput,StyleSheet,TouchableOpacity,Image,SafeAreaView, ScrollView} from'react-native';
 import ReusableTextInput from '../Components/ReusableTextInput';
 import ReusableHeader from '../Components/ReusableHeader'
@@ -7,16 +7,55 @@ import { connect ,useDispatch} from 'react-redux';
 import {setPhoneNumber , fetchData} from '../Module/Onboarding/action';
 import constants from '../constants';
 import utils from '../utils';
+import DateTimePickerModal from 'react-native-modal-datetime-picker';
+import moment from 'moment';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import translation from '../translation';
+
+
 
  
 // const phoneRegex = /^\d{8,14}$/;
 
+// const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
 
+// const showDatePicker = () => {
+//   setDatePickerVisibility(true);
+// };
+
+// const hideDatePicker = () => {
+//   setDatePickerVisibility(false);
+// };
+
+// const handleConfirm = (date) => {
+//   console.warn("A date has been picked: ", date);
+//   hideDatePicker();
+// };
 
 class PhoneNumberScreen extends React.Component {
+
     state={
        mobNumberError: '',
+       Visible: false,
+       showDateTime:''
     }
+    handlePicker=(date)=>{
+        this.setState({
+            Visible: !this.state.Visible,
+            showDateTime: moment(date).format('MMM,Do YYYY')
+        })
+    }
+    hidePicker=()=>{
+        this.setState({
+            Visible:!this.state.Visible
+        })
+    }
+    showPicker=()=>{
+        this.setState({
+            Visible: !this.state.Visible
+        })
+    }
+
     componentDidMount(){
         this.props.fetchData()
         console.log('fetchData',this.props.fetchData())
@@ -53,6 +92,7 @@ class PhoneNumberScreen extends React.Component {
                     <Image source={constants.Image.Vector} style={styles.iamgeStyle}/>
                 </View>
                 <View style={styles.linestyle}></View>
+                <KeyboardAwareScrollView >
                 <View style={styles.textArrange}>
                     <Text style={styles.textsyle}>Hi! What's your mobile</Text>
                     <Text style={styles.textsyle}>number?</Text>
@@ -76,10 +116,27 @@ class PhoneNumberScreen extends React.Component {
                     />
                  <Text style={styles.textsyle1}>Prop Tip: Use the number linked with Aadhar Card</Text>
                  <Text style={{color:'red'}}>{this.state.mobNumberError}</Text>
-                </View>
+                </View> 
+                {/* <Button title="Show Date Picker" onPress={this.showPicker} /> */}
+                <Text>{this.state.showDateTime}</Text>
+                <ReusableButton 
+                    buttonName={"Show Date Picker"} 
+                    onClick={()=>{this.showPicker()}}
+                    contentcontainerStyle={{marginTop:50}}
+                />
+                <DateTimePickerModal
+                    isVisible={this.state.Visible}
+                    mode="date"
+                    onConfirm={this.handlePicker}
+                    onCancel={this.hidePicker}
+                    cancelTextIOS={'Exit'}
+                    confirmTextIOS={"OK"}
+                />
+
                 {/* <View style={styles.textArrange2}>
                     <Text style={styles.textsyle1}>Prop Tip: Use the number linked with Aadhar Card</Text>
                 </View> */}
+                </KeyboardAwareScrollView>
                 <View style={styles.line}> 
                     <ReusableHeader/>
                 </View>
