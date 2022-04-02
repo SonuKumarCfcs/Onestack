@@ -27,8 +27,11 @@ class AadharDetailScreen extends React.Component {
             return false
         }
     }
+    onValid=()=>{
+        this.aadharValidate()==true ? this.props.navigation.navigate('AadharVerificationScreen') : null;
+    }
     render(){
-        console.log("AadharNumber==>>",this.props.AadharNumber)
+        //console.log("AadharNumber==>>",this.props.AadharNumber)
         return(
             <SafeAreaView style={styles.container}>
                
@@ -74,7 +77,7 @@ class AadharDetailScreen extends React.Component {
                     Disabled={this.props.AadharNumber=='' ? true : false}
                     buttonName={"Next"}
                     keyboard={"numeric"}
-                    onClick={()=>{this.props.navigation.navigate('AadharVerificationScreen'),this.aadharValidate()}}
+                    onClick={()=>{this.onValid(),this.aadharValidate()}}
                 />
                </View>
 

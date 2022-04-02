@@ -29,6 +29,8 @@ import ContactUsModal from '../Screens/ContactUsModal.js';
 import YourAccountScreen from '../Screens/YourAccountScreen.js';
 import BookmarkScreen from '../Screens/BookmarkScreen.js';
 import SplashScreen from '../Screens/SplashScreen';
+import ApiDataScreen from '../Screens/ApiDataScreen';
+import SelectedDataScreen from '../Screens/SelectedDataScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -40,6 +42,8 @@ const RootNavigator=()=>{
       <RootStack.Navigator  >
         <RootStack.Screen name={constants.Screens.SplashScreen} component={SplashScreen} options={{headerShown:false}} />
         <RootStack.Screen name={constants.Screens.Home} component={HomeScreen} options={{headerShown:false}} />
+        <RootStack.Screen name={constants.Screens.ApiDataScreen} component={ApiDataScreen} options={{headerShown:false}} />
+        <RootStack.Screen name={constants.Screens.SelectedDataScreen} component={SelectedDataScreen} options={{headerShown:false}} />
         <RootStack.Screen name={constants.Screens.PhoneNumberScreen} component={PhoneNumberScreen} options={{headerShown:false}} />
         <RootStack.Screen name={constants.Screens.PhoneVerificationScreen} component={PhoneVerificationScreen} options={{headerShown:false}} />
         <RootStack.Screen name={constants.Screens.EmailIdScreen} component={EmailIdScreen} options={{headerShown:false}} />

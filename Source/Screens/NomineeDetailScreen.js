@@ -45,9 +45,12 @@ export default class NomineeDetailScreen extends React.Component{
                                     DOB:val.trim()
                                 })
                             }}
+                           
 
                         />
-
+                        <TouchableOpacity style={styles.calenderStyle}>
+                            <Image source={require('../../Assets/ic_calendar.png')} />
+                        </TouchableOpacity>
                         <Text style={styles.textStyle3}>Gender</Text>
                         <ReusableTextInput
                             Data={this.props.Gender}
@@ -88,6 +91,11 @@ const styles=StyleSheet.create({
     container:{
         flex:1,
         backgroundColor: constants.Colors.white,
+    },
+    calenderStyle:{
+        position:"absolute",
+        bottom:'47.5%',
+        right:'10%',
     },
     textStyle1:{
         fontSize: constants.vw(16),

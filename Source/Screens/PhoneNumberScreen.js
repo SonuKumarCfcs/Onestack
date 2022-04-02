@@ -10,7 +10,7 @@ import utils from '../utils';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import moment from 'moment';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import translation from '../translation';
+import i18n ,{strings} from '../translation';
 
 
 
@@ -92,7 +92,7 @@ class PhoneNumberScreen extends React.Component {
                     <Image source={constants.Image.Vector} style={styles.iamgeStyle}/>
                 </View>
                 <View style={styles.linestyle}></View>
-                <KeyboardAwareScrollView >
+                <KeyboardAwareScrollView contentContainerStyle={{flexGrow:1}}>
                 <View style={styles.textArrange}>
                     <Text style={styles.textsyle}>Hi! What's your mobile</Text>
                     <Text style={styles.textsyle}>number?</Text>
@@ -101,7 +101,7 @@ class PhoneNumberScreen extends React.Component {
                     </View>
                 </View>
                 <View style={styles.textArrange1}>
-                    <Text style={styles.textsyle2}>Mobile Number</Text>
+                    <Text style={styles.textsyle2}>{i18n.t("Mobile_Number")}</Text>
                     <ReusableTextInput
                         
                         keyboard={'numeric'}
@@ -222,7 +222,7 @@ const styles=StyleSheet.create({
     // },
 
     line:{
-        marginTop: constants.vh(400),   
+       // marginTop: constants.vh(400),   
     },
     textsyle3:{
         fontSize: constants.vw(10),
@@ -235,7 +235,7 @@ const styles=StyleSheet.create({
 
 const mapStateToProps=(state)=>{
     // console.log("state=>>",state)
-    console.log("articleData=>>",state.Onboarding.articleData)
+    //console.log("articleData=>>",state.Onboarding.articleData)
     return({
     phoneNumber:state.Onboarding.phoneNumber,
     articleData : state.Onboarding.articleData,

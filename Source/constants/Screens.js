@@ -22,6 +22,8 @@ const Screens = {
     YourAccountScreen : 'YourAccountScreen',
     BookmarkScreen : 'BookmarkScreen',
     SplashScreen : 'SplashScreen',
+    ApiDataScreen : 'ApiDataScreen',
+    SelectedDataScreen : 'SelectedDataScreen',
 }
 
 export default Screens;

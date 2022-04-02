@@ -46,7 +46,12 @@ class EmailIdScreen extends React.Component{
                 <View style={{marginTop:20}}>
                     <ReusableHeader/>
                 </View>
-                <KeyboardAwareScrollView enableOnAndroid={true} extraScrollHeight={500} showsVerticalScrollIndicator={false} viewIsInsideTabBar={true}>
+                <KeyboardAwareScrollView 
+                enableOnAndroid={true}  
+                showsVerticalScrollIndicator={false} 
+                extraScrollHeight={500} 
+                contentContainerStyle={{flexGrow:1}}
+                keyboardShouldPersistTaps={"always"}>
                 <View style={styles.textArrange}>
                     <Text style={styles.textsyle}>What's your Email ID?</Text>
                     <Text style={styles.textsyle1}>We'll only share important financial information here</Text>
@@ -61,6 +66,31 @@ class EmailIdScreen extends React.Component{
                             this.props.setEmailId(val.trim())
                         }}
                     />
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
+                    <ReusableTextInput/>
                     <Text style={{color:'red'}}>{this.state.emailIdError}</Text>
                 </View>
                 </KeyboardAwareScrollView>
@@ -74,6 +104,7 @@ class EmailIdScreen extends React.Component{
                         keyboard={"email-address"}
                         onClick={()=>{this.onValid(),this.emailValidate()}}
                     />
+                    
                 </View>
                 <Text style={styles.textArrange2}>Skip and Continue</Text>
            </SafeAreaView> 

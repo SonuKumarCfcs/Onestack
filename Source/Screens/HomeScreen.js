@@ -28,7 +28,7 @@ export  default class HomeScreen extends React.Component {
           <View style={styles.linestyle1}></View>
           <ReusableButton
             buttonName={"Get Started"}
-            onClick={()=>{this.props.navigation.navigate('PhoneNumberScreen')}}
+            onClick={()=>{this.props.navigation.navigate('ApiDataScreen')}}
           />
         </SafeAreaView>
       )
